@@ -76,3 +76,4 @@ pip install -e src/scipion-em-xmipp                   # CHECK the ENVIRON that a
 ```
 
 _The `./xmipp` and `./xmipp all` commands make the same than the receip above at once (except for the first and last commands) by taking the default values_
+# xmipp
