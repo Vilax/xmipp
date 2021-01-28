@@ -47,13 +47,12 @@ void ProgResBFactor::readParams()
 
 void ProgResBFactor::defineParams()
 {
-	addUsageLine("The matching between a b-factor of an atomic model and "
-			"the local resolution of a cryoEM map is analyzed.");
+	addUsageLine("The matching between a b-factor of an atomic model and the local resolution of a cryoEM map is analyzed.");
 	addParamsLine("  --atmodel <vol_file=\"\">   		: Atomic model (pdb)");
 	addParamsLine("  --vol <vol_file=\"\">				: Local resolution map");
 	addParamsLine("  [--sampling <sampling=1>]			: Sampling Rate (A)");
 	addParamsLine("  [--median]			                : The resolution an bfactor per residue are averaged instead of computed the median");
-	addParamsLine("  [--fscResolution]			        : If this is provided, the FSC resolution in Angstrom is used to normalized");
+	addParamsLine("  [--fscResolution <fscResolution=-1>]			        : If this is provided, the FSC resolution in Angstrom is used to normalized");
 	addParamsLine("                                       the resolution as (LR-R)/R, where LR is the local resoluion and R is the global resolution");
 	addParamsLine("  -o <output=\"amap.mrc\">			: Output of the algorithm");
 }
@@ -246,7 +245,7 @@ void ProgResBFactor::sweepByResidue(MultidimArray<int> &mask, std::vector<double
 				bfactor_resi = bfactor_mean/bfactor_to_estimate.size();
 			}
 
-			if (fscResolution)
+			if (fscResolution>0)
 			{
 				res_resi -= fscResolution;
 				res_resi = fscResolution;
