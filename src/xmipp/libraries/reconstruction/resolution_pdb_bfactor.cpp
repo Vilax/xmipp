@@ -53,7 +53,7 @@ void ProgResBFactor::defineParams()
 	addParamsLine("  [--sampling <sampling=1>]			: Sampling Rate (A)");
 	addParamsLine("  [--median]			                : The resolution an bfactor per residue are averaged instead of computed the median");
 	addParamsLine("  [--fscResolution <fscResolution=-1>]			        : If this is provided, the FSC resolution in Angstrom is used to normalized");
-	addParamsLine("                                       the resolution as (LR-R)/R, where LR is the local resoluion and R is the global resolution");
+	//addParamsLine("                                       the resolution as (LR-R)/R, where LR is the local resoluion and R is the global resolution");
 	addParamsLine("  -o <output=\"amap.mrc\">			: Output of the algorithm");
 }
 
