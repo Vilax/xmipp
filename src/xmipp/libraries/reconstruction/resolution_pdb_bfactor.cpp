@@ -276,9 +276,9 @@ void ProgResBFactor::sweepByResidue(MultidimArray<int> &mask, std::vector<double
 		}
 
 		// Getting the atom position
-		int k = round(at_pos.x[idx]/sampling) + floor(zdim/2);
+		int k = round(at_pos.z[idx]/sampling) + floor(zdim/2);
 		int i = round(at_pos.y[idx]/sampling) + floor(ydim/2);
-		int j = round(at_pos.z[idx]/sampling) + floor(xdim/2);
+		int j = round(at_pos.x[idx]/sampling) + floor(xdim/2);
 		//std::cout << k << " " << i << " " << j << "resi " << resi << std::endl;
 
 		// Covalent Radius of the atom
@@ -300,7 +300,70 @@ void ProgResBFactor::sweepByResidue(MultidimArray<int> &mask, std::vector<double
 
 
 //		std::cout << "--------------------------------------" << std::endl;
+                /*
+		for (size_t kk = 0; kk<totRad; ++kk)
+		{
+			size_t kk2 = kk * kk;
+			for (size_t jj = 0; jj<totRad; ++jj)
+			{
+				size_t jj2kk2 = jj * jj + kk2;
+				for (size_t ii = 0; ii<totRad; ++ii)
+				{
+					size_t dist2 = (ii)*(ii) + (jj)*(jj) + (kk)*(kk);
+					if (dist2 <= dim)
+					{
+						A3D_ELEM(mask, k-kk, i-ii, j-jj) = 1;
+						A3D_ELEM(mask, k-kk, i-ii, j+jj) = 1;
+						A3D_ELEM(mask, k-kk, i+ii, j-jj) = 1;
+						A3D_ELEM(mask, k-kk, i+ii, j+jj) = 1;
+						A3D_ELEM(mask, k+kk, i-ii, j-jj) = 1;
+						A3D_ELEM(mask, k+kk, i-ii, j+jj) = 1;
+						A3D_ELEM(mask, k+kk, i+ii, j-jj) = 1;
+						A3D_ELEM(mask, k+kk, i+ii, j+jj) = 1;
 
+						double &z1 = A3D_ELEM(resvol, k-kk, i-ii, j-jj);
+						resolution_to_estimate.push_back(z1);
+						resolution_mean += z1;
+						N_elems++;
+
+						double &z2 = A3D_ELEM(resvol, k-kk, i-ii, j+jj);
+						resolution_to_estimate.push_back(z2);
+						resolution_mean += z2;
+						N_elems++;
+
+						double &z3 = A3D_ELEM(resvol, k-kk, i+ii, j-jj);
+						resolution_to_estimate.push_back(z3);
+						resolution_mean += z3;
+						N_elems++;
+
+						double &z4 = A3D_ELEM(resvol, k-kk, i+ii, j+jj);
+						resolution_to_estimate.push_back(z4);
+						resolution_mean += z4;
+						N_elems++;
+
+						double &z5 = A3D_ELEM(resvol, k+kk, i-ii, j-jj);
+						resolution_to_estimate.push_back(z5);
+						resolution_mean += z5;
+
+						double &z6 = A3D_ELEM(resvol, k+kk, i-ii, j+jj);
+						resolution_to_estimate.push_back(z6);
+						resolution_mean += z6;
+						N_elems++;
+
+						double &z7 = A3D_ELEM(resvol, k+kk, i+ii, j-jj);
+						resolution_to_estimate.push_back(z7);
+						resolution_mean += z7;
+						N_elems++;
+
+						double &z8 = A3D_ELEM(resvol, k+kk, i+ii, j+jj);
+						resolution_to_estimate.push_back(z8);
+						resolution_mean += z8;
+						N_elems++;
+					}
+				}
+			}
+		}
+                */
 		for (size_t kk = 0; kk<totRad; ++kk)
 		{
 			size_t kk2 = kk * kk;
