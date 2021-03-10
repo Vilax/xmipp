@@ -8,26 +8,27 @@
 Welcome to Xmipp. Xmipp is a suite of image processing programs, primarily aimed at single-particle 3D electron microscopy.
 
 
-## Getting started
+## 1. Getting started
+Xmipp can be installed and used in two general ways:
+* Installation to use Xmipp in Scipion (Recommended installation). This installation can be split in two.
+** Installation of Xmipp in Scipion for users (see section 2.1)
+** Installation of Xmipp in Scipion for developers (see section 2.2)
+* Standalone installation only Xmipp without Scipion - for advanced developers (see section 4). 
 
-#### Xmipp as a Scipion package (strongly recommended for non-developers)
+## 2.  Installation to use Xmipp in Scipion
+*  **2.1. Installation of Xmipp in Scipion for users.**
 
-The recommended way to use/install Xmipp is via [Scipion](https://scipion-em.github.io/docs/docs/scipion-modes/how-to-install.html).
-It can be easily installed using the [Plugin manager](https://scipion-em.github.io/docs/docs/user/plugin-manager.html).
+If you are not a developer this should be the installation to follow. As requirement you need to have [Scipion](https://scipion-em.github.io/docs/docs/scipion-modes/how-to-install.html) installed in your computer. Once you have Scipion installed, Xmipp can be easily installed using the [Plugin manager](https://scipion-em.github.io/docs/docs/user/plugin-manager.html).
 
-#### Xmipp as a standalone bundle (for developers)
 
-Start by cloning the repository from GitHub and go there.
+*  **2.2.  Installation of Xmipp in Scipion for developers.**
+  
+Start by cloning the repository from GitHub and go there (this action requires git installed in your computer).
 ```
 git clone https://github.com/I2PC/xmipp xmipp-bundle
 cd xmipp-bundle
 ```
-
-Please, folow one of the two points below depending on your case. Also, check the [**Xmipp configuration guide**](https://github.com/I2PC/xmipp/wiki/Xmipp-configuration-(version-20.07)). 
-
-* In case that you want to use/develop Xmipp **under Scipion (recommended)**:
-  
-  First download the rest of sources by
+First download the rest of sources by
   ```
   ./xmipp get_devel_sources [branch]
   ```
@@ -44,6 +45,16 @@ Please, folow one of the two points below depending on your case. Also, check th
   scipion3 installb xmippDev -j 8
   ```
   where `-j 8` indicates that 8 cores will be used to compile Xmipp.
+  
+
+Ensure you have scipion3 installed in your computer. 
+#### Xmipp as a standalone bundle (for developers)
+
+
+Please, folow one of the two points below depending on your case. Also, check the [**Xmipp configuration guide**](https://github.com/I2PC/xmipp/wiki/Xmipp-configuration-(version-20.07)). 
+
+* In case that you want to use/develop Xmipp **under Scipion (recommended)**:
+  
   
   > For a manual compilation of Xmipp, consider to use `scipion3 run ./xmipp [options]`
   
@@ -76,4 +87,3 @@ pip install -e src/scipion-em-xmipp                   # CHECK the ENVIRON that a
 ```
 
 _The `./xmipp` and `./xmipp all` commands make the same than the receip above at once (except for the first and last commands) by taking the default values_
-# xmipp
