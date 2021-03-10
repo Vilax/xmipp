@@ -96,7 +96,7 @@ where -j determine the number of processors, in this case we chose 4 processors 
 
 
 
-### Additional Information for developers: Detailed installation
+## Additional Information for developers: Detailed installation
 
 Next command shoule be launched by the xmipp script, however, some developers preffer to know more details about the installer.
 ```
