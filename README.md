@@ -91,15 +91,14 @@ where -j determine the number of processors, in this case we chose 4 processors 
 * Check the [**Xmipp configuration guide**](https://github.com/I2PC/xmipp/wiki/Xmipp-configuration-(version-20.07)). 
 
 
-  You can see the whole usage of the script with `./xmipp --help`. The most useful options are `br=branch_name` to select a specific branch to be checkout-ed, and `N=#processors` to use for the build (they must be in combination with the `all` option).
-
----------------
-
-
-### Detailed installation for Developers.
-
-Follow the next recipe (also read `./xmipp help`):
+  You can see the whole usage of the script with `./xmipp --help`. The most useful options are `br=branch_name` to select a specific branch to be checkout-ed, and `N=#processors` to use for the build (they must be in combination with the `all` option). Follow the next recipe (also read `./xmipp help`):
 > use `scipion3 run ./xmipp [options]` if you are installing Xmipp under Scipion
+
+
+
+### Additional Information for developers: Detailed installation
+
+Next command shoule be launched by the xmipp script, however, some developers preffer to know more details about the installer.
 ```
 git clone https://github.com/I2PC/xmipp xmipp-bundle  # This clones the main Xmipp repo into xmipp-bundle directory
 cd xmipp-bundle
@@ -115,3 +114,7 @@ pip install -e src/scipion-em-xmipp                   # CHECK the ENVIRON that a
 ```
 
 _The `./xmipp` and `./xmipp all` commands make the same than the receip above at once (except for the first and last commands) by taking the default values_
+
+
+
+
