@@ -61,13 +61,7 @@ cd xmipp-bundle
 Now, execute the xmipp script to install and compile xmipp. This script will ask the path of some dependencies. If these dependencies are not provided xmipp will try to find them for you. If this script fails go to Troubleshooting section.
   ```
   ./xmipp
-  ```
- If you consider that the compilation is too slow, you can compile using more processors with the command line
- ```
-  ./xmipp -j 4
-  ```
-where -j determine the number of processors, in this case we chose 4 processors to compile.
-  
+  ```  
   Now Xmipp should be ready to use. To use Xmipp just run the xmipp.bashrc script in the build folder
   
  ```
